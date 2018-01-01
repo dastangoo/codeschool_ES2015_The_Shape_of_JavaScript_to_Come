@@ -216,3 +216,46 @@ Regards,
 `;
 
 console.log(veryLongText);
+
+
+// function countdownTimer(target, timeLeft, options = {}) {
+//   let container = options.container || ".timer-display";
+//   let timeUnit = options.timeUnit || "seconds";
+//   let clonedDataAttribute = options.clonedDataAttribute || "cloned";
+//   let timeoutClass = options.timeoutClass || ".is-timeout";
+//   let timeoutSoonClass = options.timeoutSoonClass || ".is-timeout-soon";
+//   let timeoutSoonTime = options.timeoutSoonTime || 10;
+//   return {
+//     container,
+//     timeUnit,
+//     clonedDataAttribute,
+//     timeoutClass,
+//     timeoutSoonClass,
+//     timeoutSoonTime
+//   }
+// }
+
+function countdownTimer(target, timeLeft, options = {}) {
+  let defaults = {
+    container: ".timer-delay",
+    timeUnit: "seconds",
+    clonedDataAttribute: "cloned",
+    timeoutClass: ".is-timeout",
+    timeoutSoonClass: ".is-timeout-soon",
+    timeoutSoonTime: 10
+  }
+  
+  let settings = Object.assign({}, defaults, options);
+  if (settings.timeUnit !== defaults.timeUnit) {
+    _conversionFunction(timeLeft, settings.timeUnit);
+  }
+  console.log(settings);
+}
+
+// console.log(countdownTimer("Target", 10));
+// console.log(countdownTimer("Target", 10, {container: "Div"}));
+
+countdownTimer($('.btn-undo'), 60, { container: '.new-post-options' });
+function _conversionFunction(time, unit) {
+  
+}

@@ -1,0 +1,23 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "load-profiles.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dastangoo/codeschool_ES2015_The_Shape_of_JavaScript_to_Come.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dastangoo/codeschool_ES2015_The_Shape_of_JavaScript_to_Come/issues"
+  },
+  "homepage": "https://github.com/dastangoo/codeschool_ES2015_The_Shape_of_JavaScript_to_Come#readme",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
