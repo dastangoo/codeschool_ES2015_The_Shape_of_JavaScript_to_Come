@@ -31,7 +31,7 @@ function loadProfiles(userNames = []) {
   // setPageThread("New Version Out Soon!", {
   //   popular: true
   // });
-  setPageThread("New Version Out Soon!");
+  // setPageThread("New Version Out Soon!");
   displayTags("songs");
   displayTags("songs", "lyrics", "bands");
   // getRequest("/topics/17/tags", function (data) {
@@ -41,6 +41,9 @@ function loadProfiles(userNames = []) {
   let targetDiv = "";
   let tagComponent = new TagComponent(targetDiv, "/topics/17/tags");
   tagComponent.render();
+  // let first = "a";
+  // let last = "b";
+  // console.log(`${first} ${last}`);
 }
 
 function _displayFlash() {
@@ -127,3 +130,89 @@ TagComponent.prototype.render = function () {
 function getRequest(path, cb) {
   
 }
+
+
+// function buildUser(first, last) {
+  // let fullName = first + " " + last;
+  // let fullName = `{first} + " " + {last}`;
+  // return { first: first, last: last, fullName: fullName };
+  
+  // Shorthand Object initializer in case where parameter names and properties of object have the same name.
+//   return { first, last, fullName };
+// }
+// function buildUser(first, last, postCount) {
+//   let fullName = first + " " + last;
+//   const ACTIVE_POST_COUNT = 10;
+// 
+//   return {
+//     first,
+//     last, 
+//     fullName,
+//     isActive: function () {
+//       return postCount >= ACTIVE_POST_COUNT;
+//     }
+//   };
+// }
+function buildUser(first, last, postCount) {
+  // let fullName = first + " " + last;
+  let fullName = `${first} ${last}`;
+  const ACTIVE_POST_COUNT = 10;
+  
+  return {
+    first,
+    last, 
+    fullName,
+    isActive() {
+      return postCount >= ACTIVE_POST_COUNT;
+    }
+  };
+}
+
+// let user = buildUser("John", "Doe");
+// console.log(user.first);
+// console.log(user.last);
+// console.log(user.fullName);
+
+// let first = user.first;
+// let last = user.last;
+// let fullName = user.fullName;
+
+// let {first, last, fullName} = buildUser("John", "Doe");
+// let { fullName } = buildUser("Same", "Williams");
+let { last, fullName } = buildUser("Same", "Williams");
+// console.log(first);
+// console.log(last);
+console.log(last);
+console.log(fullName);
+
+
+
+let name = "Sam";
+let age = 45;
+let friends = ["Brook", "Tyler"];
+
+// let user = { name: name, age: age, friends: friends };
+// let user = { name, age, friends };
+
+// console.log(user.name);
+// console.log(user.age);
+// console.log(user.friends);
+
+
+let userName = "Sam";
+let admin = { fullName: "Alex Williams" };
+
+let veryLongText = `Hi ${userName},
+this is a very
+very
+
+
+veeeery
+long text.
+
+
+Regards,
+ ${admin, fullName}
+`;
+
+console.log(veryLongText);
