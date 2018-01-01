@@ -1,25 +1,19 @@
 function loadProfiles(userNames) {
-  // let flashMessage = "Hello";
-  // flashMessage = "Goodbye";
-  // let flashMessage = "Hi";
-  if (userNames.length > 3) {
-    // var loadingMessage = "This might take a while...";
+  const MAX_USERS = 3;
+  console.log(MAX_USERS);
+  if (userNames.length > MAX_USERS) {
     let loadingMessage = "This might take a while...";
+    console.log(loadingMessage);
     _displaySpinner(loadingMessage);
-    console.log(flashMessage);
+    
   } else {
-    // var flashMessage = "Loading Profiles";
     let flashMessage = "Loading Profiles";
+    console.log(flashMessage);
     _displayFlash(flashMessage);
   }
-  console.log(flashMessage);
-  // ... fetch names and build sidebar
   
-  // for (var i in userNames) {
-  //   _fetchProfile("/users/" + userNames[i], function () {
-  //     console.log("Fetched for " + userNames[i]);
-  //   });
-  // }
+  const MAX_REPLIES = 3;
+  console.log(MAX_REPLIES);
   
   for (let i in userNames) {
     _fetchProfile("/users/" + userNames[i], function () {
